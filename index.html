@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="generated-image (2).png" type="image/png">
     <title>Alamdaar - Next-Gen Digital Solutions</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -124,17 +125,33 @@
             font-size: 24px;
             font-weight: 700;
             color: white;
+            height: auto;
+            width: 120px;
+            float: right;
+            margin-left: 30px;
         }
 
+        .logo img {
+            height: 70px;
+            width: auto;
+            float: right;
+            margin-left: 19px; 
+        }
+    
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 4px;
+            height: 10px;
             background: linear-gradient(135deg, #7c3aed, #a855f7);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
+        }
+        .logo a:hover,
+        .logo-icon a.active {
+            color: white;
+            box-shadow: #c4b5fd;
         }
 
         .nav-menu {
@@ -745,8 +762,31 @@
                 width: 95%;
             }
 
+            .logo {
+                width: 80px;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
             .nav-menu {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                backdrop-filter: blur(20px);
+                border-radius: 0 0 30px 30px;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-menu.show {
+                display: flex;
             }
 
             .mobile-toggle {
@@ -813,8 +853,10 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">
-            <div class="logo-icon">⚡</div>
-            <span>Alamdaar</span>
+            <div class="logo-icon">
+                <a href="#home">
+                <img src="generated-image-removebg-preview.png" alt=""></div></a>
+            <span></span>
         </div>
         <ul class="nav-menu">
             <li><a href="#home" class="active">Home</a></li>
@@ -887,7 +929,7 @@
     <section class="stats fade-in">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">150+</div>
+                <div class="stat-number">10+</div>
                 <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-item">
@@ -895,7 +937,7 @@
                 <div class="stat-label">Client Satisfaction</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">50+</div>
+                <div class="stat-number">10+</div>
                 <div class="stat-label">Happy Clients</div>
             </div>
             <div class="stat-item">
@@ -1135,7 +1177,7 @@
         // Mobile toggle
         function toggleMobile() {
             const navMenu = document.querySelector('.nav-menu');
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.classList.toggle('show');
         }
 
         // Scroll to section helper
